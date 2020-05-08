@@ -1,0 +1,55 @@
+name: "dotnet-sonarscanner"
+description: runs sonar scanner for  netcore solutions with pull request support
+author: "Nazmi Altun <nazmialtun@windowslive.com>"
+
+inputs:
+  project-key:
+    description: "SonarQube/SonarCloud project key"
+    required: true
+  project-name:
+    description: "SonarQube/SonarCloud project name"
+    required: true
+  organization:
+    description: "Organization name on SonarQube/SonarCloud"
+    required: true
+  version:
+    description: "Organization name on SonarQube/SonarCloud"
+    required: true
+  cpd-exclusions:
+    description: "Pattern for code coverage exclusion"
+    required: false
+  opencover-report-paths:
+    description: "Pattern for code coverage exclusion"
+    required: false
+    default: "coverage/*.xml"
+  url:
+    description: "Pattern for code coverage exclusion"
+    required: true
+    default: "https://sonarcloud.io"
+  solution-path:
+    description: "Relative path of sln file"
+    required: true
+  pr-repository:
+    description: "pull request repository"
+    required: false
+  pr-branch:
+    description: "pull request branch"
+    required: false
+  pr-key:
+    description: "pull request number"
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.project-key }}
+    - ${{ inputs.project-name }}
+    - ${{ inputs.organization }}
+    - ${{ inputs.version }}
+    - ${{ inputs.cpd-exclusions }}
+    - ${{ inputs.opencover-report-paths }}
+    - ${{ inputs.url }}
+    - ${{ inputs.solution-path }}
+    - ${{ inputs.pr-repository }}
+    - ${{ inputs.pr-branch }}
+    - ${{ inputs.pr-key }}
