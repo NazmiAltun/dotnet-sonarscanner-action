@@ -36,6 +36,6 @@ then
     /d:sonar.pullrequest.github.key=\"${8}\""
 fi
 
-
+sh -c "$begin_cmd"
 sh -c "dotnet build -c Release $7"
 sh -c "dotnet-sonarscanner end /d:sonar.login=\"${SONAR_TOKEN}\""
