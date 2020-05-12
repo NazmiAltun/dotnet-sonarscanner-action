@@ -1,6 +1,9 @@
 name: "dotnet-sonarcloud"
 description: runs sonar scanner for  netcore solutions with pull request support
 author: "Nazmi Altun <nazmialtun@windowslive.com>"
+branding:
+  icon: 'target'  
+  color: 'blue'
 
 inputs:
   project-key:
