@@ -1,4 +1,4 @@
-name: "dotnet-sonarscanner"
+name: "dotnet-sonarcloud"
 description: runs sonar scanner for  netcore solutions with pull request support
 author: "Nazmi Altun <nazmialtun@windowslive.com>"
 
