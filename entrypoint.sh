@@ -38,4 +38,4 @@ fi
 
 sh -c "$begin_cmd"
 sh -c "dotnet build -c Release $7"
-sh -c "dotnet-sonarscanner end /d:sonar.login=\"${SONAR_TOKEN}\""
+sh -c "/dotnet-sonarscanner end /d:sonar.login=\"${SONAR_TOKEN}\""
