@@ -21,6 +21,7 @@ begin_cmd="/dotnet-sonarscanner begin \\
 
 if [ -n "$5" ]
 then
+    echo "Full Repo : ${GITHUB_REPOSITORY}  Repo:${GITHUB_REPOSITORY##*/}"
     sh -c "sed -i 's/\/home\/runner\/work\/${GITHUB_REPOSITORY##*/}\/${GITHUB_REPOSITORY##*/}\//\/source\//g' ${5}"
     begin_cmd="$begin_cmd /d:sonar.cs.opencover.reportsPaths=\"${5}\""
 fi
